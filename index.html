@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件非对称加密/解密</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>文件非对称加密/解密</h1>
+
+    <div class="container">
+        <h2>密钥管理</h2>
+        <button id="generateKeys">生成新密钥对</button>
+        <div class="key-display">
+            <label for="publicKeyInput">公钥:</label>
+            <textarea id="publicKeyInput" rows="4" placeholder="粘贴公钥或生成新密钥"></textarea>
+            <label for="privateKeyInput">私钥:</label>
+            <textarea id="privateKeyInput" rows="4" placeholder="粘贴私钥或生成新密钥"></textarea>
+        </div>
+        <button id="exportPublicKey">导出公钥</button>
+        <button id="exportPrivateKey">导出私钥</button>
+        <label for="importPublicKey">导入公钥:</label>
+        <input type="file" id="importPublicKey" accept=".pem">
+        <label for="importPrivateKey">导入私钥:</label>
+        <input type="file" id="importPrivateKey" accept=".pem">
+    </div>
+
+    <div class="container">
+        <h2>文件操作</h2>
+        <label for="fileInput">选择文件:</label>
+        <input type="file" id="fileInput">
+        <br>
+        <button id="encryptButton">使用公钥加密文件</button>
+        <button id="decryptButton">使用私钥解密文件</button>
+    </div>
+
+    <div id="status"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
